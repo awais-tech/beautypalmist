@@ -197,7 +197,10 @@ const BookingDetail = () => {
               </div>
               <div class="row Paymentrow">
                 <div class="col-md-6">
-                  <h5 class="floatstart">Date & Time</h5>
+                  <h5 class="floatstart">
+                    Date {state.bookingInfo.date}& Time{" "}
+                    {state.bookingInfo.timer}
+                  </h5>
                 </div>
                 <div class="col-md-6">
                   <h5 class="floatend">...</h5>

@@ -47,30 +47,34 @@ const BRegister = () => {
           values.phoneNo,
           "bussness",
           0
-        ).then((data) => {
-          const formData = new FormData();
+        )
+          .then((data) => {
+            const formData = new FormData();
 
-          formData.append("address", values.address);
-          formData.append("categoryId", values.bussnessCategory);
-          formData.append("userId", data.id);
-          formData.append("bussnessstatus", values.bussnessStatus);
-          formData.append("bussnessname", values.bussnessName);
-          formData.append("accountLink", values.account);
-          formData.append("cnic", images[0].file);
-          formData.append("about", values.about);
-          const config = {
-            headers: {
-              "content-type": "multipart/form-data",
-            },
-          };
-          console.log(33544);
-          bussnessServices.addBussness(formData, config).then(() => {
-            success(
-              "Your Accout is Registered You can when your application approved"
-            );
-            navigate("/Business");
+            formData.append("address", values.address);
+            formData.append("categoryId", values.bussnessCategory);
+            formData.append("userId", data.id);
+            formData.append("bussnessstatus", values.bussnessStatus);
+            formData.append("bussnessname", values.bussnessName);
+            formData.append("accountLink", values.account);
+            formData.append("cnic", images[0].file);
+            formData.append("about", values.about);
+            const config = {
+              headers: {
+                "content-type": "multipart/form-data",
+              },
+            };
+            console.log(33544);
+            bussnessServices.addBussness(formData, config).then(() => {
+              success(
+                "Your Accout is Registered You can when your application approved"
+              );
+              navigate("/Business");
+            });
+          })
+          .catch((e) => {
+            error(e.error);
           });
-        });
       } else {
         error("Please upload Cnic Front image");
       }
@@ -100,7 +104,7 @@ const BRegister = () => {
                   .email("Invalid email address format")
                   .required("Email is required"),
                 password: Yup.string()
-                  .min(3, "Password must be 3 characters at minimum")
+
                   .required("Please Enter your password")
                   .matches(
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
@@ -119,7 +123,10 @@ const BRegister = () => {
                 bussnessStatus: Yup.string().required(
                   "Bussness Status is Required"
                 ),
-
+                name: Yup.string()
+                  .required()
+                  .min(3, "name must be character long")
+                  .max(20, "name must me smaller then 20 characters"),
                 about: Yup.string()
                   .min(25, "Please enter atleast 25 charcater")
                   .required("About is required"),
@@ -263,7 +270,9 @@ const BRegister = () => {
                         className="form-select"
                       >
                         <option value="Registered">Select</option>
-                        <option value="Registered">Registered Bussness</option>
+                        <option value="Registered Bussness">
+                          Registered Bussness
+                        </option>
                         <option value="Small Bussness">Small Bussness</option>
                         <option value="Home Bussness">Home Bussness</option>
                       </Field>
@@ -341,7 +350,7 @@ const BRegister = () => {
 
                       <div class="form-group">
                         <Field
-                          type="email"
+                          type="text"
                           name="account"
                           class="form-control"
                           id="exampleInputEmail1"

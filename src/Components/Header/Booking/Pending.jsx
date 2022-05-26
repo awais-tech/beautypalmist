@@ -112,6 +112,8 @@ const Pending = () => {
                           Swal.fire({
                             title: "Detail",
                             html: `
+                            <div style="font-weight:bold">name:${val.UserId?.name}</div>
+                            <div style="font-weight:bold">email:${val.UserId?.email}</div>
                           <div style="font-weight:bold">Price:${val.Price}</div>
                           <div style="font-weight:bold">Building:${val.Building}</div>
                           <div style="font-weight:bold">Address:${val.Address}</div>
@@ -190,6 +192,8 @@ const Pending = () => {
                           Swal.fire({
                             title: "Detail",
                             html: `
+                            <div style="font-weight:bold">name:${val.UserId?.name}</div>
+                            <div style="font-weight:bold">email:${val.UserId?.email}</div>
                           <div style="font-weight:bold">Price:${val.Price}</div>
                           <div style="font-weight:bold">Building:${val.Building}</div>
                           <div style="font-weight:bold">Address:${val.Address}</div>

@@ -2,13 +2,14 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../../../Services/provideMain";
 import bussnessServices from "../../../Services/services/bussnessuser";
+import { success } from "../../../utilties/Messagehandler";
 import "./UserProfile.css";
 const UserProfile = () => {
   let { state, updateUser } = useAuth();
   const [profile, setProfile] = React.useState({
     name: state.user.name,
     email: state.user.email,
-    phone: state.user.phoneNo,
+    phoneNo: state.user.phoneNo,
   });
   console.log(state);
   const profileUpdate = (e) => {
@@ -18,6 +19,7 @@ const UserProfile = () => {
   const submits = () => {
     bussnessServices.updateUser(profile).then((val) => {
       updateUser(profile);
+      success("Profile is updated");
     });
   };
   return (
@@ -53,8 +55,8 @@ const UserProfile = () => {
                   type="number"
                   class="form-control "
                   id="emailId"
-                  name="phone"
-                  value={profile.phone}
+                  name="phoneNo"
+                  value={profile.phoneNo}
                   aria-describedby="emailHelp"
                   placeholder="Phoneno"
                   onChange={profileUpdate}

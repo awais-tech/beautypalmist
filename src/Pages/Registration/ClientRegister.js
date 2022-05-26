@@ -48,12 +48,15 @@ const CRegister = () => {
                     confirmPassword: "",
                   }}
                   validationSchema={Yup.object().shape({
-                    name: Yup.string().required("Name is Required"),
+                    name: Yup.string()
+                      .required("Name is Required")
+                      .min(3, "name must be character long")
+                      .max(20, "name must me smaller then 20 characters"),
                     email: Yup.string()
                       .email("Invalid email address format")
                       .required("Email is required"),
                     password: Yup.string()
-                      .min(3, "Password must be 3 characters at minimum")
+
                       .required("Please Enter your password")
                       .matches(
                         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
