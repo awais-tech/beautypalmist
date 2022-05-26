@@ -2,9 +2,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import "./Profile.css";
 import { useAuth } from "../../../../Services/provideMain";
+import bussnessServices from "../../../../Services/services/bussnessuser";
+import { success } from "../../../../utilties/Messagehandler";
 const Profile = () => {
   const { state, getUser } = useAuth();
-  console.log(state);
+  const [accountNo, setaccountNo] = React.useState();
+  const aC = () => {
+    bussnessServices.updateAc(getUser()._id, { accountNo }).then(() => {
+      success("Account no updated");
+    });
+  };
   return (
     <div class="py-5 mainProfileSettings">
       <div class="card toppings">Profile Settings</div>
@@ -87,12 +94,29 @@ const Profile = () => {
               value={getUser().about}
               placeholder="About"
             />
+            <input
+              type="text"
+              class="form-control settingfield"
+              id="about"
+              onChange={(e) => setaccountNo(e.target.value)}
+              readOnly={
+                (getUser().accountNo && getUser().accountNo != "No") || false
+              }
+              value={
+                getUser().accountNo == "No" ? accountNo : getUser().accountNo
+              }
+              placeholder="Account No"
+            />
 
-            {/* <div class="btnupdate">
-              <button type="button" class="btn btn-lg btn-dark">
-                Update
+            <div class="btnupdate">
+              <button
+                type="button"
+                class="btn btn-lg btn-dark mt-2"
+                onClick={() => aC()}
+              >
+                Update Account No
               </button>
-            </div> */}
+            </div>
           </form>
         </div>
       </div>

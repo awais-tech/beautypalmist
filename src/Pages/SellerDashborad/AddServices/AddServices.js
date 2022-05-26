@@ -221,6 +221,7 @@ const AddServices = () => {
                     aria-hidden="true"
                   ></i>
                 </button> */}
+                      Add Service Image
                       <ImageUploading
                         value={images}
                         onChange={onChange}

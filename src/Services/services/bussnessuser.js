@@ -16,6 +16,9 @@ class BussnessServices extends GenericServices {
   updateUser = (data) => {
     return this.post("users/userUpdate", data);
   };
+  updateAc = (id, data) => {
+    return this.put("Bussness/" + id, data);
+  };
 }
 let bussnessServices = new BussnessServices();
 export default bussnessServices;
