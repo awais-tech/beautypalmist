@@ -17,3 +17,7 @@
     background-color:#F1ECEC !important;
       height: 100%;
   }
+  .carousel-caption h1{
+   color: black !important;
+   font-size: 100px;
+  }
