@@ -56,9 +56,9 @@ const AddServices = () => {
           setCat(val.subcategory);
           setInitial({
             ...initial,
-            ServiceCode:
-              Math.floor(Math.random() * 1000 + 10 + Math.random() * 100 + 1) +
-              getUser().categoryId._id,
+            ServiceCode: Math.floor(
+              Math.random() * 1000 + 10 + Math.random() * 100 + 1
+            ),
           });
         }
       );

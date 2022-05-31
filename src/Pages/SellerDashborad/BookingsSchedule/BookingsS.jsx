@@ -27,13 +27,13 @@ const BookingSchedule = () => {
                   id="uncontrolled-tab-example"
                   className="mb-3"
                 >
-                  <Tab eventKey="upcoming" title="Upcoming">
+                  <Tab eventKey="upcoming" title="Confirmed Bookings">
                     <Upcomings />
                   </Tab>
                   <Tab eventKey="history" title="History">
                     <HistoryP />
                   </Tab>
-                  <Tab eventKey="pending" title="Pending">
+                  <Tab eventKey="pending" title="Bookinng Requests">
                     <PendingS />
                   </Tab>
                   <Tab eventKey="Payment" title="Payment">

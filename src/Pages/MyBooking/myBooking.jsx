@@ -22,20 +22,19 @@ const MyBooking = () => {
                 <h6 class="card-subtitile py-4">
                   View, reschedule & cancel your bookings and easily book again.
                   <br />
-                 
                 </h6>
                 <Tabs
                   defaultActiveKey="upcoming"
                   id="uncontrolled-tab-example"
                   className="mb-3"
                 >
-                  <Tab eventKey="upcoming" title="Upcoming">
+                  <Tab eventKey="upcoming" title="Confirmed Bookings">
                     <Upcoming />
                   </Tab>
                   <Tab eventKey="history" title="History">
                     <History />
                   </Tab>
-                  <Tab eventKey="pending" title="Pending">
+                  <Tab eventKey="pending" title="Bookings Requests">
                     <Pending />
                   </Tab>
                   <Tab eventKey="rejected" title="Rejected">

@@ -91,15 +91,40 @@ const ServiceList = () => {
       setService([...ori]);
     }
   };
+  const find = (e) => {
+    setService(
+      ori.filter((fil) =>
+        fil.name.toUpperCase().includes(e.target.value.toUpperCase())
+      )
+    );
+  };
   return (
     <div className={`${classes.width} container-fluid`}>
+      <div class=" col-sm-8">
+        <form class="card card-sm form-control-borderless">
+          <div class="card-body row no-gutters align-items-center">
+            <div class="col-auto">
+              <i class="fa fa-search h4 text-body"></i>
+            </div>
+
+            <div class="col">
+              <input
+                onChange={find}
+                class="form-control form-control-lg form-control-borderless"
+                type="search"
+                placeholder="Search By Service Name"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
       <div className="row">
         <div className={`col-md-3 ${classes.main}`}>
           <div className="shadow-lg pt-4 rounded">
             <h1 className="py-3">Sort By Price Range</h1>
             <div className="shadow-lg bg-black py-5 rounded">
               <h2 className={classes.range} onClick={() => filter("Luxury")}>
-                LUXERY
+                Luxery
               </h2>
               <h2
                 className={classes.range}

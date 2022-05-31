@@ -141,7 +141,7 @@ const Pending = () => {
           </li>
         </ul>
       </Tab>
-      <Tab eventKey="Payment" title="Payment Pending">
+      <Tab eventKey="Payment" title="Accepted">
         <ul class="list-group">
           <li class="list-group-item">
             {serviceP.length > 0 ? (

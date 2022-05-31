@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Services/provideMain";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -11,6 +11,7 @@ const BookingDetail = () => {
   const { state } = useAuth();
   const { state: data } = useLocation();
   const [clients, setClients] = React.useState(1);
+  const navigation = useNavigate();
   const [init, setInit] = React.useState({
     name: state.user?.name,
     email: state.user?.email,
@@ -43,7 +44,9 @@ const BookingDetail = () => {
         OwnerId: data.info.userid._id,
       })
       .then((val) => {
-        Swal.fire("Booking Request has been sent");
+        Swal.fire("Booking Request has been sent").then((val) => {
+          navigation("/MyBooking");
+        });
       });
   };
   return (
