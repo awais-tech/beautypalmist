@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Home.module.css";
+
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   let navigate = useNavigate();
@@ -27,52 +28,83 @@ const Home = () => {
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="4000">
               <img
-                src="https://static.wixstatic.com/media/11062b_20e5ea01c75345adb069c47d7fd88546~mv2.jpg/v1/fill/w_1349,h_620,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_20e5ea01c75345adb069c47d7fd88546~mv2.jpg"
-                class="d-block w-100"
-                alt="..."
+                src="https://static.wixstatic.com/media/nsplsh_ec163b8588f6459ebbe1d10fb1ca9641~mv2.jpg/v1/fill/w_1349,h_560,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/nsplsh_ec163b8588f6459ebbe1d10fb1ca9641~mv2.jpg"
+                class="d-block w-100 h-100"
+                alt="homeslide"
               />
-              <div class="carousel-caption  d-md-block">
-                <h2 class="headh2" rounded>
-                  Beauty Palmist
-                </h2>
+              <div class="carousel-caption">
+                <h1>
+                  Explore our Services
+                </h1>
 
-                <div class="red subhead rounded">
-                  Choose from a variety of categories from Personal Care to
-                  Fitness deserunt{" "}
-                </div>
+                <p class="">
+                  View{" "}
+                </p>
               </div>
             </div>
             <div class="carousel-item" data-interval="4000">
               <img
-                src="https://static.wixstatic.com/media/11062b_470f3c8f617842fb8dca582e36250a42~mv2.jpg/v1/fill/w_1470,h_1292,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_470f3c8f617842fb8dca582e36250a42~mv2.jpg"
-                class="d-block w-100"
+                src="https://static.wixstatic.com/media/11c705_1268f765f0794e6b90a2d24b559b5c2b~mv2.jpg/v1/fill/w_1200,h_578,al_c,q_85,enc_auto/11c705_1268f765f0794e6b90a2d24b559b5c2b~mv2.jpg"
+                class="d-block w-100 h-100"
                 alt="..."
               />
               <div class="carousel-caption  d-md-block  ">
                 <h2 class="headh2" rounded>
-                  Beauty Palmist
+                  Salons
                 </h2>
 
                 <div class="red  subhead rounded">
-                  Choose from a variety of categories from Personal Care to
-                  Fitness{" "}
+                  Learn More{" "}
                 </div>
               </div>
             </div>
             <div class="carousel-item" data-interval="4000">
               <img
-                src="https://static.wixstatic.com/media/11062b_f68602886d71455a85a9705d586b75a0~mv2.jpg/v1/fill/w_1895,h_933,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_f68602886d71455a85a9705d586b75a0~mv2.jpg"
-                class="d-block w-100"
+                src="https://static.wixstatic.com/media/11062b_7baad12566c547d3bcd4f45b895e589e~mv2.jpg/v1/fill/w_1349,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_7baad12566c547d3bcd4f45b895e589e~mv2.jpg"
+                class="d-block w-100 h-100"
                 alt="..."
               />
               <div class="carousel-caption  d-md-block">
                 <h2 class="headh2" rounded>
-                  Beauty Palmist
+                  Aesthetics
                 </h2>
 
                 <div class="red subhead rounded">
-                  Choose from a variety of categories from Personal Care to
+                  Learn More
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-interval="4000">
+              <img
+                src="https://static.wixstatic.com/media/11062b_2d254ff732c24a3bb782ef6801ecd13f~mv2.jpg/v1/fill/w_1349,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_2d254ff732c24a3bb782ef6801ecd13f~mv2.jpg"
+                class="d-block w-100 h-100"
+                alt="..."
+              />
+              <div class="carousel-caption  d-md-block">
+                <h2 class="headh2" rounded>
                   Fitness
+                </h2>
+
+                <div class="red subhead rounded">
+                  Learn More
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-interval="4000">
+              <img
+                src="https://static.wixstatic.com/media/e476b6b2b0fd432ca460e0b16067b6ed.jpg/v1/fill/w_1348,h_650,al_c,q_85,enc_auto/e476b6b2b0fd432ca460e0b16067b6ed.jpg"
+                class="d-block w-100 h-100"
+                alt="..."
+              />
+              <div class="carousel-caption  d-md-block">
+                <h2 class="headh2" rounded>
+                  Photography
+                </h2>
+
+                <div class="red subhead rounded">
+                  Learn More
                 </div>
               </div>
             </div>
