@@ -29,6 +29,9 @@ const CRegister = () => {
       error(e.error);
     }
   };
+  const phoneRegex = RegExp(
+    /^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{2})((-?)|( ?))([0-9]{7})$/gm
+  );
   return (
     <div className={classes.main}>
       <div class="container">
@@ -62,8 +65,11 @@ const CRegister = () => {
                         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
                         "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
                       ),
-                    phoneNo: Yup.number()
-                      .min(3, "PhoneNo must be 11 characters at minimum")
+                    phoneNo: Yup.string()
+                      .matches(
+                        phoneRegex,
+                        "Invalid phone (Ex:03xxxxxxxxx,+923xxxxxxxxx,923054055977)"
+                      )
                       .required("PhoneNo is required"),
                     confirmPassword: Yup.string().test(
                       "passwords-match",
@@ -120,7 +126,7 @@ const CRegister = () => {
                       <div class="form-group">
                         <Field
                           name="phoneNo"
-                          type="number"
+                          type="text"
                           placeholder="Enter phoneNo"
                           className="form-control"
                         />

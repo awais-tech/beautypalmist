@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Services/provideMain";
 import bookingServices from "../../Services/services/booking";
+import { urlImage } from "../../Services/url";
 import classes from "./SingleService.module.css";
 const SingleService = () => {
   const { state } = useLocation();
@@ -46,38 +47,9 @@ const SingleService = () => {
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
-                    src="https://media.vogue.co.uk/photos/5efcac19100363e612305ceb/master/w_4500,h_3003,c_limit/Salons_HAIR-LOUNGE-SALON.jpg"
+                    src={`${urlImage}${state?.val?.image}`}
                     alt="First slide"
                   />
-                  <Carousel.Caption>
-                    <h1
-                      style={{
-                        color: "black",
-                        fontWeight: "bold !important",
-                      }}
-                    >
-                      Book Now
-                    </h1>
-                  </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://cdn1.treatwell.net/images/view/v2.i1719934.w1080.h720.x59B7C043"
-                    alt="Third slide"
-                  />
-
-                  <Carousel.Caption>
-                    <h1
-                      style={{
-                        color: "black",
-                        fontWeight: "bold !important",
-                      }}
-                    >
-                      Book Now
-                    </h1>
-                  </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
             </div>

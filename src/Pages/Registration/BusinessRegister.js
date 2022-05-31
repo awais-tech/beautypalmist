@@ -90,6 +90,9 @@ const BRegister = () => {
   };
   const [images, setImages] = useState([]);
   const maxNumber = 1;
+  const phoneRegex = RegExp(
+    /^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{2})((-?)|( ?))([0-9]{7})$/gm
+  );
   return (
     <div className={classes.main}>
       <div class="container">
@@ -110,8 +113,12 @@ const BRegister = () => {
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
                     "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
                   ),
-                phoneNo: Yup.number()
-                  .min(3, "PhoneNo must be 11 characters at minimum")
+                phoneNo: Yup.string()
+                  .matches(
+                    phoneRegex,
+                    "Invalid phone (Ex:03xxxxxxxxx,+923xxxxxxxxx,923054055977)"
+                  )
+
                   .required("PhoneNo is required"),
                 confirmPassword: Yup.string().test(
                   "passwords-match",
@@ -146,6 +153,7 @@ const BRegister = () => {
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
+                        <label class={classes.lib}>Bussiness Name</label>
                         <Field
                           name="bussnessName"
                           type="text"
@@ -159,6 +167,7 @@ const BRegister = () => {
                         />
                       </div>
                       <div class="form-group">
+                        <label class={classes.lib}>Email</label>
                         <Field
                           name="email"
                           type="email"
@@ -172,6 +181,7 @@ const BRegister = () => {
                         />
                       </div>
                       <div class="form-group">
+                        <label class={classes.lib}>Address</label>
                         <Field
                           name="address"
                           type="text"
@@ -186,6 +196,7 @@ const BRegister = () => {
                         />
                       </div>
                       <div class="form-group">
+                        <label class={classes.lib}>Password</label>
                         <Field
                           name="password"
                           type="password"
@@ -199,6 +210,7 @@ const BRegister = () => {
                         />
                       </div>
                       <div class="form-group">
+                        <label class={classes.lib}>Confirm Password</label>
                         <Field
                           name="confirmPassword"
                           type="password"
@@ -213,6 +225,7 @@ const BRegister = () => {
                       </div>
 
                       <div class="form-group">
+                        <label class={classes.lib}>Name</label>
                         <Field
                           name="name"
                           type="text"
@@ -249,9 +262,10 @@ const BRegister = () => {
                     </div>
                     <div class=" col-md-6">
                       <div class="form-group">
+                        <label class={classes.lib}>Phone No</label>
                         <Field
                           name="phoneNo"
-                          type="number"
+                          type="text"
                           class="form-control"
                           placeholder="Phoneno"
                         />
@@ -349,6 +363,7 @@ const BRegister = () => {
                       </ImageUploading>
 
                       <div class="form-group">
+                        <label class={classes.lib}>Account</label>
                         <Field
                           type="text"
                           name="account"

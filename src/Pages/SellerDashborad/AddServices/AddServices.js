@@ -111,7 +111,10 @@ const AddServices = () => {
                 ServiceDescription: Yup.string().required(
                   "Service Description is required"
                 ),
-                Price: Yup.number().required("Price is required"),
+                Price: Yup.number()
+                  .min(1, "Price must be greater then 0")
+
+                  .required("Please enter a valid number"),
               })}
               onSubmit={handleFormSubmit}
             >

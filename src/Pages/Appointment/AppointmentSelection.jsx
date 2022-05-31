@@ -47,7 +47,7 @@ function AppointmentSelection() {
       ori
         .filter(
           (val) =>
-            val.Date.toString() == moment(e).format("MMM Do YY").toString() &&
+            val.Date.toString() == moment(e).format("Do MMM YYYY").toString() &&
             val.status == 4
         )
         .map((val) => val.Time)
@@ -88,7 +88,7 @@ function AppointmentSelection() {
     } else {
       if (!timer.includes("No Select")) {
         saveBooking({
-          date: moment(value).format("MMM Do YY"),
+          date: moment(value).format("Do MMM YYYY"),
           timer,
           ...location.state.info,
         });
@@ -160,7 +160,7 @@ function AppointmentSelection() {
               </b>{" "}
             </h6>
             <h6>
-              {moment(value).format("MMM Do YY")} {timer}
+              {moment(value).format("Do MMM YYYY")} {timer}
             </h6>
             <p>1 hr</p>
             <p>Rs {location.state.info.Price}</p>
